@@ -18,4 +18,8 @@ class Room:
         amount = self.ticket_price
         self.till += amount
 
-    
+    def guest_check_in(self,guest):
+        self.guest_lists.append(guest)
+
+    def guest_check_out(self,guest):
+        self.guest_lists.remove(guest)

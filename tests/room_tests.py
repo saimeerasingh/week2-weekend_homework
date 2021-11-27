@@ -1,6 +1,7 @@
 import unittest
 
 from src.songs import Songs
+from src.guests import Guests
 
 from src.room import Room
 
@@ -45,6 +46,18 @@ class TestRoom(unittest.TestCase):
     def test_can_add_money_to_till(self):
         self.room.add_money_to_till(15.50)
         self.assertEqual(266, self.room.till)
+    
+    def test_can_add_guest_to_list(self):
+        guest = Guests('Eve',50,'Closer')
+        self.room.guest_check_in(guest)
+        self.assertEqual(1,len(self.room.guest_lists))
+
+    def test_can_remove_guest_from_list(self):
+        guest = Guests('Eve',50,'Closer')
+        self.room.guest_check_in(guest)
+        self.room.guest_check_out(guest)
+
+
 
 
         
