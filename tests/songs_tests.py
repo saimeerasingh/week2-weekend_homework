@@ -6,3 +6,5 @@ class TestSongs(unittest.TestCase):
         self.song1 = Songs('Closer')
         self.song2 = Songs('Sunshine')
         self.song3 = Songs('Love Song')
+    
+    

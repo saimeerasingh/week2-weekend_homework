@@ -29,4 +29,22 @@ class TestRoom(unittest.TestCase):
     def test_room_has_songs_list(self):
         self.assertEqual(3,len(self.room.songs))
 
+    def test_room_has_guest_list(self):
+        self.assertEqual(0,len(self.room.guest_lists))
     
+    def test_can_add_song_to_list(self):
+        song = Songs('You are beautiful')
+        self.room.add_song_to_list(song)
+        self.assertEqual(4,len(self.room.songs))
+
+    def test_can_remove_song_from_list(self):
+        song = self.song1
+        self.room.remove_song_from_list(song)
+        self.assertEqual(2,len(self.room.songs))
+
+    def test_can_add_money_to_till(self):
+        self.room.add_money_to_till(15.50)
+        self.assertEqual(266, self.room.till)
+
+
+        
