@@ -9,4 +9,13 @@ class TestGuest(unittest.TestCase):
         self.guest3 = Guests('Krish',75,'Sunshine')
     
     
+    def test_check_guest_has_name(self):
+        self.assertEqual('Eve',self.guest1.name)
+
+    def test_check_guest_has_wallet(self):
+        self.assertEqual(60 , self.guest2.wallet)
+
+    def test_check_guest_has_favourite_song(self):
+        self.assertEqual('Sunshine' , self.guest3.favourite_song)
+
         
