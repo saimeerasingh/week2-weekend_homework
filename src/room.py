@@ -1,3 +1,5 @@
+import random
+
 class Room:
     def __init__(self,name,till,ticket_price,capcity,songs):
         self.name = name
@@ -33,3 +35,6 @@ class Room:
             self.guest_check_in(guest)
         else:
             return 'Cannot add more Guests!'
+
+    def play_random_song(self):
+        return random.choice(self.songs)

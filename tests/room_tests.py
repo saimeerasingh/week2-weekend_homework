@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 
 from src.songs import Songs
 from src.guests import Guests
@@ -68,6 +69,16 @@ class TestRoom(unittest.TestCase):
         self.room.room_capcity_check()
         self.room.guest_check_in(guest)
         self.assertEqual(1, len(self.room.guest_lists))
+
+    @patch('random.choice')
+    def test_can_play_random_song_from_list(self,mock_choice):
+        mock_choice.return_value = 'Closer'
+        song_played = self.room.play_random_song()
+        self.assertEqual('Closer' , song_played)
+        
+
+
+       
 
 
 
