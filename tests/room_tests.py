@@ -57,6 +57,17 @@ class TestRoom(unittest.TestCase):
         self.room.guest_check_in(guest)
         self.room.guest_check_out(guest)
 
+    def test_can_check_room_capcity(self):
+        capcity = self.room.room_capcity_check()
+        self.assertLessEqual(0, capcity )
+
+# Extensions solution:
+
+    def test_if_more_guests_can_check_in(self):
+        guest = Guests('Eve',50,'Closer')
+        self.room.room_capcity_check()
+        self.room.guest_check_in(guest)
+        self.assertEqual(1, len(self.room.guest_lists))
 
 
 

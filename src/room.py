@@ -23,3 +23,13 @@ class Room:
 
     def guest_check_out(self,guest):
         self.guest_lists.remove(guest)
+
+    def room_capcity_check(self):
+        seats_left = self.capcity - len(self.guest_lists)
+        return seats_left
+
+    def check_in_more_guests(self,guest):
+        if self.room_capcity_check():
+            self.guest_check_in(guest)
+        else:
+            return 'Cannot add more Guests!'
