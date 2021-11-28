@@ -75,6 +75,17 @@ class TestRoom(unittest.TestCase):
         mock_choice.return_value = 'Closer'
         song_played = self.room.play_random_song()
         self.assertEqual('Closer' , song_played)
+    
+    def test_if_guests_can_cheer_for_favourite_song(self):
+        guest1 = Guests('Eve',50,'Closer')
+        guest2 = Guests('Ada',60,'Love Song')
+        guest3 = Guests('Krish',75,'Sunshine')
+        self.room.guest_check_in(guest1)
+        self.room.guest_check_in(guest2)
+        self.room.guest_check_in(guest3)
+        return_value = self.room.guest_cheering()
+        self.assertEqual('Whooo!', return_value)
+        
         
 
 

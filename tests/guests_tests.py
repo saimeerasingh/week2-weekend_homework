@@ -2,6 +2,7 @@ import unittest
 
 from src.room import Room
 from src.guests import Guests
+from src.songs import Songs
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
@@ -9,6 +10,7 @@ class TestGuest(unittest.TestCase):
         self.guest2 = Guests('Ada',60,'Love Song')
         self.guest3 = Guests('Krish',75,'Sunshine')
         self.guest_list = [self.guest1,self.guest2,self.guest3]
+        self.songs = [Songs('Closer'), Songs('Sunshine'),Songs('Love Song')]
     
     
     def test_check_guest_has_name(self):
@@ -20,9 +22,11 @@ class TestGuest(unittest.TestCase):
     def test_check_guest_has_favourite_song(self):
         self.assertEqual('Sunshine' , self.guest3.favourite_song)
 
-    def test_if_guests_can_cheer_for_favourite_song(self,room):
-        song = room.play_random_song()
-        for guest in self.guest_list
+    # def test_if_guests_can_cheer_for_favourite_song(self):
+    #     room = Room('Radio Star',250.50,15.50,20,self.songs)
+    #     return_value = self.guest1.guest_cheering(room)
+    #     self.assertEqual('Whooo!', return_value)
+        
 
 
         

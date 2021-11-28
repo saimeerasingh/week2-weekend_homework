@@ -38,3 +38,10 @@ class Room:
 
     def play_random_song(self):
         return random.choice(self.songs)
+
+    def guest_cheering(self):
+        song = self.play_random_song()
+        for guest in self.guest_lists:
+            if song.name == guest.favourite_song:
+                return 'Whooo!'
+              
