@@ -85,6 +85,8 @@ class TestRoom(unittest.TestCase):
         self.room.guest_check_in(guest3)
         return_value = self.room.guest_cheering()
         self.assertEqual('Whooo!', return_value)
+    
+    
         
         
 

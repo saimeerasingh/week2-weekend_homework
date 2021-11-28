@@ -22,11 +22,6 @@ class TestGuest(unittest.TestCase):
     def test_check_guest_has_favourite_song(self):
         self.assertEqual('Sunshine' , self.guest3.favourite_song)
 
-    # def test_if_guests_can_cheer_for_favourite_song(self):
-    #     room = Room('Radio Star',250.50,15.50,20,self.songs)
-    #     return_value = self.guest1.guest_cheering(room)
-    #     self.assertEqual('Whooo!', return_value)
-        
-
+  
 
         
